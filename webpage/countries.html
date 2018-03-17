@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Template</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Visualizations
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href=".html">Overviewing the US</a>
+                        <a class="dropdown-item" href="test.html">Machine learning in Cities</a>
+                        <a class="dropdown-item" href="test.html">Machine learning in Cities_II</a>
+
+                    </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Poverty_definition">Definition</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#git">Git_Repository</a>
+                    </li>
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="card">
+        <div class="card-header">
+
+        </div>
+        <div class="card-body">
+            <h4 class="card-title">Poverty in the US counties</h4>
+            <p class="card-text">The US Census Data collects data for more than 3000+ counties through more than 34 variables, such as employment,
+                transportation description, type of employment. </p>
+
+
+        </div>
+    </div>
+
+    <div class="container-fluid" style="width:85%">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <br>
+                        <h2>I. Preliminary Findings</h2>
+                        <hr/>
+                        <p>Before modeling Poverty, some potential strong correlations were identified. </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h4>General Overview</h4>
+                        <p>Wyoming, Vermont, North Dakota and Alaska are the States with the majority of counties in poverty
+                            </p>
+                        <br>
+                        <a href="intropoverty.html" class="card-link">More Info</a>
+
+                        <div class="hidden-md hidden-lg">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h4>Exploring Poverty</h4>
+                        <p>The preliminary exploration lead to identify strong correlation between poverty and ethnicity, income,
+                            %pop who finished high school, and unemployment </p>
+                        <p>Data Tool: Correlation Heatmap</p>
+                        <div class="hidden-md hidden-lg">
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <br>
+                        <h2>II. Classification of counties</h2>
+                        <hr/>
+                        <p>Based on the preliminary findings, the second step is to identfify and cnsecuently clasified the
+                            more important variable that influence Poverty in the counties </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h4>High School Rates correlates to Poverty levels</h4>
+                        <p>A "unit" increase in the unemployment rate is associated with a 0.188130 "unit" increase in the percentage
+                            of population who does not finish college. R~0.912</p>
+                        <p>Method Applied: OLS Regression over 10 variables.
+                            <a href="lineareg.html" class="card-link">More Info</a>
+                        </p>
+
+
+                        <div class="hidden-md hidden-lg">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <h4>Having a car decisive to Poverty</h4>
+                        <p>Decision tree Classification indicate that Having a Car is the most important feature of the model
+                            with the highest Gini value of 0.5 </p>
+                        <br>
+                        <p>Method Applied: Decision Tree.
+                            <a href="lineareg.html" class="card-link">More Info</a>
+                        </p>
+                        <div class="hidden-md hidden-lg">
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid" style="width:85%">
+        <h2>III. Excluding Income and Unemployment</h2>
+        <p>After replicating the decision tree model, over different escenarios income per capita, and unemployment were the
+            most important features in the model. To identify other relationships they were excluded of the analysis.</p>
+        <div class="card-group">
+            <div class="card">
+
+                <div class="card-body">
+                    <h4 class="card-title">Race an important feature</h4>
+                    <p class="card-text">Counties with population native american or black are more likely to being classified as in Poverty (feature
+                        perfomance Gini 0.70)</p>
+                    <p>Method Applied: Decision Tree.
+                        <a href="dectree.html" class="card-link">More Info</a>
+                    </p>
+
+                </div>
+            </div>
+            <div class="card">
+
+                <div class="card-body">
+                    <h4 class="card-title">Notes</h4>
+                    <p class="card-text">A county can have a population of 5,000 people, as well as 100,000 hence the accuracy of the model can
+                        varies.</p>
+                    <p> The information collected over counties it is difficult to compare at the state level due to the lack
+                        of information</p>
+                    <a href="dectree.html" class="card-link">More Info</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container-fluid">
+            <div class="row footerHR">
+            </div>
+            <div class="row footerBlock">
+                <div class="col-md-12">
+                    <br>
+                    <p>Copyright Coding Bootcamp 2018</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
